@@ -1,0 +1,31 @@
+{
+  "name": "profile-generator",
+  "version": "1.0.0",
+  "description": "An app that creates a team profile page based on user input using OOP, TDD, and Node js",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sithSlave/profile-generator.git"
+  },
+  "keywords": [
+    "JS",
+    "Jest",
+    "Node"
+  ],
+  "author": "Josh Miller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sithSlave/profile-generator/issues"
+  },
+  "homepage": "https://github.com/sithSlave/profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "jest": "^26.4.2"
+  }
+}
