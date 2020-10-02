@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #3b3b3b;
+}
+
+header {
+    text-align: center;
+    background-color: #990a00;
+    color: #fff;
+    height: 100px;
+    box-shadow: 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 4em;
+}
