@@ -7,13 +7,10 @@ body {
 }
 
 header {
-    text-align: center;
     background-color: #990a00;
-    color: #fff;
-    height: 100px;
     box-shadow: 0px 10px rgba(0, 0, 0, 0.3);
 }
 
-header h1 {
-    font-size: 4em;
+.card-header {
+    background-color: #010140;
 }
