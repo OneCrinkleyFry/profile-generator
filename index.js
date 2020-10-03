@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const writer = require('./utils/generate-site');
+const writer = require('./src/page-template');
 
 const team = [];
 
@@ -223,11 +223,23 @@ const promptTeam = () => {
         ])
         .then(res => {
             if (!res.confirmTeamMember) {
+                console.log(team);
                 writer(team);
             } else {
                 inquiry(res.memberType);
             }
         })
 }
+const tempData = [];
+const man1 = new Manager('George', '1234','asdfasddfasdff','65');
+tempData.push(man1);
+const eng1 = new Engineer('Henry', '143209','lasdfasfsfd','bigbooty69');
+tempData.push(eng1);
+const int1 = new Intern('scott', '1234123412344','asdfafsdfsda','asfdasdfsadff');
+tempData.push(int1);
+const eng2 = new Engineer('bob', '432890','asdfadsf','sigma90');
+tempData.push(eng2);
 
-inquiry('Manager');
+writer(tempData);
+
+// inquiry('Manager');
