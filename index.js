@@ -6,179 +6,176 @@ const writer = require('./src/page-writer');
 
 const team = [];
 
-
-const managerQuestions = [
-    {
-        type: "input",
-        name: 'name',
-        message: 'Who is the team manager?',
-        validate: nameInput => {
-            if (nameInput) {
-                return true;
-            } else {
-                console.log(`Please enter a name.`);
-                return false;
+const questions = [
+    [
+        {
+            type: "input",
+            name: 'name',
+            message: 'Who is the team manager?',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log(`Please enter a name.`);
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is their employee id? (enter a number)',
+            validate: idInput => {
+                const temp = parseInt(idInput);
+                if (temp) {
+                    return true;
+                } else {
+                    console.log(`Please enter an id number.`);
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Please enter the manager's email address.",
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log(`Please enter an email.`);
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'officeNumber',
+            message: "Please enter the manager's office number.",
+            validate: officeInput => {
+                const temp = parseInt(officeInput);
+                if (temp) {
+                    return true;
+                } else {
+                    console.log(`Please enter an office number.`);
+                    return false;
+                }
             }
         }
-    },
-    {
-        type: 'input',
-        name: 'id',
-        message: 'What is their employee id? (enter a number)',
-        validate: idInput => {
-            const temp = parseInt(idInput);
-            if (temp) {
-                return true;
-            } else {
-                console.log(`Please enter an id number.`);
-                return false;
+    ],
+    [
+        {
+            type: "input",
+            name: 'name',
+            message: 'Who is the Engineer?',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log(`Please enter a name.`);
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is their employee id? (enter a number)',
+            validate: idInput => {
+                const temp = parseInt(idInput);
+                if (temp) {
+                    return true;
+                } else {
+                    console.log(`Please enter an id number.`);
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Please enter the engineer's email address.",
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log(`Please enter an email.`);
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: "Please enter the engineer's github username.",
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log(`Please enter a github username.`);
+                    return false;
+                }
             }
         }
-    },
-    {
-        type: 'input',
-        name: 'email',
-        message: "Please enter the manager's email address.",
-        validate: emailInput => {
-            if (emailInput) {
-                return true;
-            } else {
-                console.log(`Please enter an email.`);
-                return false;
+    ],
+    [
+        {
+            type: "input",
+            name: 'name',
+            message: 'Who is the Intern?',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log(`Please enter a name.`);
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is their employee id? (enter a number)',
+            validate: idInput => {
+                const temp = parseInt(idInput);
+                if (temp) {
+                    return true;
+                } else {
+                    console.log(`Please enter an id number.`);
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Please enter the intern's email address.",
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log(`Please enter an email.`);
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: "Where do they attend school?",
+            validate: schoolInput => {
+                if (schoolInput) {
+                    return true;
+                } else {
+                    console.log(`Please enter a school name.`);
+                    return false;
+                }
             }
         }
-    },
-    {
-        type: 'input',
-        name: 'officeNumber',
-        message: "Please enter the manager's office number.",
-        validate: officeInput => {
-            const temp = parseInt(officeInput);
-            if (temp) {
-                return true;
-            } else {
-                console.log(`Please enter an office number.`);
-                return false;
-            }
-        }
-    }
+    ]
 ];
 
-const engineerQuestions = [
-    {
-        type: "input",
-        name: 'name',
-        message: 'Who is the Engineer?',
-        validate: nameInput => {
-            if (nameInput) {
-                return true;
-            } else {
-                console.log(`Please enter a name.`);
-                return false;
-            }
-        }
-    },
-    {
-        type: 'input',
-        name: 'id',
-        message: 'What is their employee id? (enter a number)',
-        validate: idInput => {
-            const temp = parseInt(idInput);
-            if (temp) {
-                return true;
-            } else {
-                console.log(`Please enter an id number.`);
-                return false;
-            }
-        }
-    },
-    {
-        type: 'input',
-        name: 'email',
-        message: "Please enter the engineer's email address.",
-        validate: emailInput => {
-            if (emailInput) {
-                return true;
-            } else {
-                console.log(`Please enter an email.`);
-                return false;
-            }
-        }
-    },
-    {
-        type: 'input',
-        name: 'github',
-        message: "Please enter the engineer's github username.",
-        validate: githubInput => {
-            if (githubInput) {
-                return true;
-            } else {
-                console.log(`Please enter a github username.`);
-                return false;
-            }
-        }
-    }
-];
-
-const internQuestions = [
-    {
-        type: "input",
-        name: 'name',
-        message: 'Who is the Intern?',
-        validate: nameInput => {
-            if (nameInput) {
-                return true;
-            } else {
-                console.log(`Please enter a name.`);
-                return false;
-            }
-        }
-    },
-    {
-        type: 'input',
-        name: 'id',
-        message: 'What is their employee id? (enter a number)',
-        validate: idInput => {
-            const temp = parseInt(idInput);
-            if (temp) {
-                return true;
-            } else {
-                console.log(`Please enter an id number.`);
-                return false;
-            }
-        }
-    },
-    {
-        type: 'input',
-        name: 'email',
-        message: "Please enter the intern's email address.",
-        validate: emailInput => {
-            if (emailInput) {
-                return true;
-            } else {
-                console.log(`Please enter an email.`);
-                return false;
-            }
-        }
-    },
-    {
-        type: 'input',
-        name: 'school',
-        message: "Where do they attend school?",
-        validate: schoolInput => {
-            if (schoolInput) {
-                return true;
-            } else {
-                console.log(`Please enter a school name.`);
-                return false;
-            }
-        }
-    }
-];
-
-const questions = [managerQuestions, engineerQuestions, internQuestions];
-
-const inquiry = (type = 'Manager') => {
+const inquiry = (type) => {
     let typeIndex = 0;
     switch (type) {
         case 'Manager':
