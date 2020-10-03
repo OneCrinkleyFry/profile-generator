@@ -1,3 +1,33 @@
-# profile-generator
+# Profile-Generator
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/K7mRb-NYkA0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## Description
+
+  An app to dynamically create a team roster using user input
+  
+  ### Features
+    Asks the user for information about employees
+    
+    Dynamically creates elements that matches the input
+    
+    The webpage is styled to look modern, and be accesible
+  
+## Languages
+  * JavaScript
+  * CSS
+  ### Frameworks/Packages
+    * Node
+    * Inquirer
+    * Jest
+  ### Paradigms
+    * Object Oriented Programing
+    * Test Driven Development
+  
+## Creator
+
+Josh Miller
+
+## Demos
+
+[Click here for a demo of how the app works on my youtube](https://www.youtube.com/watch?v=K7mRb-NYkA0&t=2s)
+
+![](https://github.com/sithSlave/profile-generator/blob/main/demo-gifs/profile-generator-tests.gif)
