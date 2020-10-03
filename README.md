@@ -30,4 +30,6 @@ Josh Miller
 
 [Click here for a demo of how the app works on my youtube](https://www.youtube.com/watch?v=K7mRb-NYkA0&t=2s)
 
+These are all of the tests passing:
+
 ![](https://github.com/sithSlave/profile-generator/blob/main/demo-gifs/profile-generator-tests.gif)
