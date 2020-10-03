@@ -4,8 +4,10 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const writer = require('./src/page-template');
 
+//the team being created
 const team = [];
 
+// the questions being asked.
 const questions = [
     [
         {
@@ -175,6 +177,8 @@ const questions = [
     ]
 ];
 
+
+// a function that takes a role, and 
 const inquiry = (type) => {
     let typeIndex = 0;
     switch (type) {
@@ -223,23 +227,15 @@ const promptTeam = () => {
         ])
         .then(res => {
             if (!res.confirmTeamMember) {
-                console.log(team);
+                console.log('Building team!');
                 writer(team);
             } else {
+                console.log(`-----------------------
+Adding a(n) ${res.memberType}!
+-----------------------`);
                 inquiry(res.memberType);
             }
         })
 }
-const tempData = [];
-const man1 = new Manager('George', '1234','asdfasddfasdff','65');
-tempData.push(man1);
-const eng1 = new Engineer('Henry', '143209','lasdfasfsfd','bigbooty69');
-tempData.push(eng1);
-const int1 = new Intern('scott', '1234123412344','asdfafsdfsda','asfdasdfsadff');
-tempData.push(int1);
-const eng2 = new Engineer('bob', '432890','asdfadsf','sigma90');
-tempData.push(eng2);
 
-writer(tempData);
-
-// inquiry('Manager');
+inquiry('Manager');

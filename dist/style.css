@@ -8,16 +8,30 @@ body {
 
 header {
     background-color: #990a00;
-    box-shadow: 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
 }
 
 .card {
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.5);
     width: 400px;
     margin: 10px;
 }
 
 .card-header {
     background-color: #010140;
+}
+
+svg {
+    font-size: 1.75rem;
+    vertical-align: sub;
+}
+
+h3 {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
