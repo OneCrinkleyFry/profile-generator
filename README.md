@@ -14,14 +14,25 @@
 ## Languages
   * JavaScript
   * CSS
-  ### Frameworks/Packages
-    * Node
-    * Inquirer
-    * Jest
-  ### Paradigms
-    * Object Oriented Programing
-    * Test Driven Development
+### Frameworks/Packages
+  * Node
+  * Inquirer
+  * Jest
+### Paradigms
+  * Object Oriented Programing
+  * Test Driven Development
   
+## Instructions
+  How to use:
+  
+    * Clone the repository to your local machine
+    * In your terminal/command line, navigate to the repo
+    * type:
+      npm install
+    * Once that is done run the command:
+      node index
+    * Follow the prompts until you are Finished
+    * the finished html file will be created in the dist directory for your use
 ## Creator
 
 Josh Miller
