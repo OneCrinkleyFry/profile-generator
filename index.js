@@ -178,8 +178,10 @@ const questions = [
 ];
 
 
-// a function that takes a role, and 
+// a function that takes a role
 const inquiry = (type) => {
+
+    // determines the index that the questions need to be accessed based on the role.
     let typeIndex = 0;
     switch (type) {
         case 'Manager':
@@ -192,9 +194,13 @@ const inquiry = (type) => {
             typeIndex = 2;
             break;
     }
+
+    // the prompts at the index determined by the role.
     inquirer
         .prompt(questions[typeIndex])
         .then(res => {
+            //creates an object using the role to determine which kind
+                //and pushes it to the team
             if (typeIndex === 0) {
                 const manager = new Manager(res.name, res.id, res.email, res.officeNumber);
                 team.push(manager);
@@ -205,10 +211,12 @@ const inquiry = (type) => {
                 const intern = new Intern(res.name, res.id, res.email, res.school);
                 team.push(intern);
             }
+        // calls function promptTeam
         })
         .then(promptTeam);
 };
 
+// a function that asks if there is another team member
 const promptTeam = () => {
     inquirer
         .prompt([
@@ -218,6 +226,7 @@ const promptTeam = () => {
                 message: 'Are there any other team Members?'
             },
             {
+                //asks what Role they hold
                 type: 'list',
                 name: 'memberType',
                 message: 'What role do they have?',
@@ -226,10 +235,14 @@ const promptTeam = () => {
             }
         ])
         .then(res => {
+            // If there is not another team member
             if (!res.confirmTeamMember) {
+                // writes the html file.
                 console.log('Building team!');
                 writer(team);
+            // if there is
             } else {
+                // Inquires about the chosen role
                 console.log(`-----------------------
 Adding a(n) ${res.memberType}!
 -----------------------`);
@@ -238,4 +251,5 @@ Adding a(n) ${res.memberType}!
         })
 }
 
+//initiases the program starting with the manager.
 inquiry('Manager');

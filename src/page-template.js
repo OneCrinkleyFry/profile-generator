@@ -1,14 +1,21 @@
 const fs = require('fs');
 
+// the team
 let team = [];
+
 const writePage = teamMembers => {
+    //assigns the array of employee objects to a globally accessed variable.
     team = teamMembers;
+
+    //creates an html file at the specified location
     fs.writeFile('./dist/index.html', basicPage(), err => {
         if (err) throw err;
+        //logs if successful.
         console.log('File Created!');
     })
 }
 
+//the template for the html document
 const basicPage = () => {
     return `<!DOCTYPE html>
 <html lang="en">
@@ -30,6 +37,7 @@ const basicPage = () => {
 </html>`;
 };
 
+// a function that creates cards for each item in the team.
 const createCards = () => {
     let cards = ``;
     for (let i = 0; i < team.length; i++) {
@@ -39,9 +47,15 @@ const createCards = () => {
     return cards;
 }
 
+//the card template
 const cardTemplate = (employee) => {
-    // console.log(employee);
+    // destructs the employee object into both required and non required variables
+    // if the value is not contained in the employee object it will result as undefined
+        //which can then be used as a falsey value.
     const { name, id, email, role, school, officeNumber, github } = employee;
+
+    //creates the template, and calls the function to display the title with the applicable icon
+    //also calls the function to display the last list item specific to the role using those falsey values
     return `<div class="card mb-4 column">
                 <div class="card-header text-light">
                     <h2 class='text-capitalize'>${name}</h2>
@@ -57,6 +71,7 @@ const cardTemplate = (employee) => {
             </div>`
 }
 
+// checks the role, and displays the correct trait accordingly.
 const classListItem = (role, trait) => {
     if (role === 'Manager') {
         return `<li class="list-group-item">Office Number: ${trait}</li>`;
@@ -67,6 +82,7 @@ const classListItem = (role, trait) => {
     }
 }
 
+// A function that takes the Role to display the role h3 element.
 const roleDisplayer = (role) => {
     let title = `       <h3 class='${role}'>${role}</h3>`;
     let icons = [`<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-briefcase-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -77,6 +93,7 @@ const roleDisplayer = (role) => {
                     </svg>`, `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eyeglasses" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M4 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/>
                     </svg>`]
+    //checks the role, and displays the appropriate icon in front of the Role.
     if (role === 'Manager') {
         return icons[0] + title;
     } else if (role === 'Engineer') {
