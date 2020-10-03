@@ -43,4 +43,8 @@ Josh Miller
 
 These are all of the tests passing:
 
-![](https://github.com/sithSlave/profile-generator/blob/main/demo-gifs/profile-generator-tests.gif)
+![](./demo-gifs/profile-generator-tests.gif)
+
+## The Final Product
+
+![](./demo-gifs/finished-product.png)
