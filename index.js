@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const writer = require('./src/page-writer');
+const writer = require('./utils/generate-site');
 
 const team = [];
 
